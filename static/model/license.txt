@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tsar Ivan IV's "Ivan the Terrible's" Helmet
+* source:	https://sketchfab.com/3d-models/tsar-ivan-ivs-ivan-the-terribles-helmet-74da2505ff2240a19217150c555a9e82
+* author:	The Royal Armoury (Livrustkammaren) (https://sketchfab.com/TheRoyalArmoury)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tsar Ivan IV's "Ivan the Terrible's" Helmet" (https://sketchfab.com/3d-models/tsar-ivan-ivs-ivan-the-terribles-helmet-74da2505ff2240a19217150c555a9e82) by The Royal Armoury (Livrustkammaren) (https://sketchfab.com/TheRoyalArmoury) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
