@@ -55,17 +55,12 @@ async function init(){
 
         const elapsedTime = clock.getElapsedTime()
 
-        // Update objects
         model.rotation.y = .2 * elapsedTime
 
-        // Update Orbital Controls
-        // controls.update()
         TWEEN.update()
 
-        // Render
         renderer.render(scene, camera)
 
-        // Call tick again on the next frame
         window.requestAnimationFrame(tick)
     }
 
@@ -138,7 +133,7 @@ const hemiGui = gui.addFolder('hemi')
 
 hemiGui.add(hemiLight, 'intensity').min(0).max(20).step(.01)
 
-
+///////////////////////////////////////////
 
 const sizes = {
     width: window.innerWidth,
@@ -146,23 +141,18 @@ const sizes = {
 }
 
 window.addEventListener('resize', () => {
-    // Update sizes
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
 
-    // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()
 
-    // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-/**
- * Camera
- */
-// Base camera
+///////////////////////////////////////////
+
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.set(0, -0.55, 1.2)
 scene.add(camera)
@@ -173,9 +163,8 @@ cameraGui.add(camera.position, 'y').min(-10).max(10)
 cameraGui.add(camera.position, 'z').min(-10).max(10)
 cameraGui.add(camera.rotation, 'y').step(.001)
 
-/**
- * Renderer
- */
+///////////////////////////////////////////
+
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
     alpha: true
