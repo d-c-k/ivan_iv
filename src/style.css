@@ -9,7 +9,7 @@ body
 {
     height: 100vh;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: lightgray;
 }
 
 .webgl
@@ -33,6 +33,24 @@ body
 }
 
 .text_block {
-    grid-column: 2/5;
+    grid-column: 2/4;
     grid-row: 2;
+}
+
+a {
+    color: white;
+    font-weight: normal;
+}
+
+.text_btn {
+    text-decoration: underline;
+    cursor: pointer;
+    color: white;
+}
+
+@media screen and (max-width: 1008px){
+    .text_block {
+        grid-column: 2/8;
+        margin-top: 2rem;
+    }
 }

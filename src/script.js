@@ -67,27 +67,93 @@ async function init(){
     tick()
 
     let btn1Active = false
+    let btn2Active = false
+    let btn3Active = false
 
     document.getElementById('btn1').addEventListener('click', e => {
         if(btn1Active === false){            
             new TWEEN.Tween(camera.position)
-                .to({x: -0.1,y: -.85,z:  0.45}, 1500)
+                .to({x: -0.1,y: -.85,z:  0.45}, 1000)
+                .start()
+            new TWEEN.Tween(camera.rotation)
+                .to({x: 0,y: 0,z:  0}, 1000)
                 .start()
             new TWEEN.Tween(hemiLight)
-                .to({intensity: 8}, 2500)
+                .to({intensity: 8}, 2000)
                 .start()
             console.log(hemiLight.intensity)
             btn1Active = true
+            btn2Active = false
+            btn3Active = false
         } else {
             new TWEEN.Tween(camera.position)
-                .to({x: 0,y: -.55,z:  1.2}, 800)
+                .to({x: 0,y: -0.55,z:  1.2}, 800)
                 .start()
             new TWEEN.Tween(hemiLight)
                 .to({intensity: 5}, 1500)
                 .start()
             console.log(hemiLight.intensity)
-            camera.position.set(0, -0.55, 1.2)
             btn1Active = false
+        }
+    })
+
+    document.getElementById('btn2').addEventListener('click', e => {
+        if(btn2Active === false){            
+            new TWEEN.Tween(camera.position)
+                .to({x: 0,y: 0.01,z:  0.166}, 1000)
+                .start()
+            new TWEEN.Tween(camera.rotation)
+                .to({x: -0.632,y: 0.337,z:  0}, 1000)
+                .start()
+            new TWEEN.Tween(hemiLight)
+                .to({intensity: 8}, 2000)
+                .start()
+            console.log(hemiLight.intensity)
+            btn1Active = false
+            btn2Active = true            
+            btn3Active = false            
+        } else {
+            new TWEEN.Tween(camera.position)
+                .to({x: 0,y: -0.55,z:  1.2}, 800)
+                .start()
+            new TWEEN.Tween(camera.rotation)
+                .to({x: 0,y: 0,z:  0}, 800)
+                .start()
+            new TWEEN.Tween(hemiLight)
+                .to({intensity: 5}, 1500)
+                .start()
+            console.log(hemiLight.intensity)
+            btn2Active = false
+        }
+    })
+
+    document.getElementById('btn3').addEventListener('click', e => {
+        if(btn3Active === false){            
+            new TWEEN.Tween(camera.position)
+                .to({x: -0.2,y: -0.55,z:  0.4567}, 1000)
+                .start()
+            new TWEEN.Tween(camera.rotation)
+                .to({x: -0.322,y: 0,z:  0}, 1000)
+                .start()
+            new TWEEN.Tween(hemiLight)
+                .to({intensity: 8}, 2000)
+                .start()
+            console.log(hemiLight.intensity)
+            btn1Active = false
+            btn2Active = false            
+            btn3Active = true            
+        } else {
+            new TWEEN.Tween(camera.position)
+                .to({x: 0,y: -0.55,z:  1.2}, 800)
+                .start()
+            new TWEEN.Tween(camera.rotation)
+                .to({x: 0,y: 0,z:  0}, 800)
+                .start()
+            new TWEEN.Tween(hemiLight)
+                .to({intensity: 5}, 1500)
+                .start()
+            console.log(hemiLight.intensity)
+            btn3Active = false
         }
     })
 }
@@ -158,11 +224,11 @@ camera.position.set(0, -0.55, 1.2)
 scene.add(camera)
 
 const cameraGui = gui.addFolder('camera')
-cameraGui.add(camera.position, 'x').min(-10).max(10)
-cameraGui.add(camera.position, 'y').min(-10).max(10)
-cameraGui.add(camera.position, 'z').min(-10).max(10)
+cameraGui.add(camera.position, 'x').min(-10).max(10).step(.0001)
+cameraGui.add(camera.position, 'y').min(-10).max(10).step(.0001)
+cameraGui.add(camera.position, 'z').min(-10).max(10).step(.0001)
+cameraGui.add(camera.rotation, 'x').step(.001)
 cameraGui.add(camera.rotation, 'y').step(.001)
-
 ///////////////////////////////////////////
 
 const renderer = new THREE.WebGLRenderer({
