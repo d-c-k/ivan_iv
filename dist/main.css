@@ -1,0 +1,62 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+    color: lightgray;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    background: black;
+}
+
+.container {
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 1rem;
+    grid-template-rows: 1fr 9fr;
+}
+
+.text_block {
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+a {
+    color: white;
+    font-weight: normal;
+}
+
+.text_btn {
+    text-decoration: underline;
+    cursor: pointer;
+    color: white;
+}
+
+#main {
+    display: none;
+}
+
+@media screen and (max-width: 1008px){
+    .text_block {
+        grid-column: 2/8;
+        margin-top: 2rem;
+    }
+}
+
+/*# sourceMappingURL=main.css.map*/

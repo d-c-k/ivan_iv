@@ -48,6 +48,10 @@ a {
     color: white;
 }
 
+#main {
+    display: none;
+}
+
 @media screen and (max-width: 1008px){
     .text_block {
         grid-column: 2/8;

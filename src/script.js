@@ -52,10 +52,9 @@ async function init(){
     const clock = new THREE.Clock()
 
     const tick = () => {
-
         const elapsedTime = clock.getElapsedTime()
 
-        model.rotation.y = .2 * elapsedTime
+        model.rotation.y = 0.2 * elapsedTime
 
         TWEEN.update()
 
@@ -66,6 +65,11 @@ async function init(){
 
     tick()
 
+    if(model){
+        document.getElementById('main').setAttribute('style', 'display: block')
+        document.getElementById('load').setAttribute('style', 'display: none')
+    }
+
     let btn1Active = false
     let btn2Active = false
     let btn3Active = false
@@ -73,7 +77,7 @@ async function init(){
     document.getElementById('btn1').addEventListener('click', e => {
         if(btn1Active === false){            
             new TWEEN.Tween(camera.position)
-                .to({x: -0.1,y: -.85,z:  0.45}, 1000)
+                .to({x: -0.1,y: -0.85,z:  0.45}, 1000)
                 .start()
             new TWEEN.Tween(camera.rotation)
                 .to({x: 0,y: 0,z:  0}, 1000)
