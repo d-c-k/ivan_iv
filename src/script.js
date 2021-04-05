@@ -1,11 +1,11 @@
 import './style.css'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import * as dat from 'dat.gui'
+// import * as dat from 'dat.gui'
 import * as TWEEN from '@tweenjs/tween.js'
 
-// Debug
-const gui = new dat.GUI()
+// // Debug
+// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -175,11 +175,11 @@ scene.add(pointLight)
 const pointLightHelper = new THREE.PointLightHelper(pointLight, 1)
 scene.add(pointLightHelper)
 
-const lightGui = gui.addFolder('light')
-lightGui.add(pointLight.position, 'x').min(-20).max(20).step(.01)
-lightGui.add(pointLight.position, 'y').min(-20).max(20).step(.01)
-lightGui.add(pointLight.position, 'z').min(-20).max(20).step(.01)
-lightGui.add(pointLight, 'intensity').min(0).max(10).step(.01)
+// const lightGui = gui.addFolder('light')
+// lightGui.add(pointLight.position, 'x').min(-20).max(20).step(.01)
+// lightGui.add(pointLight.position, 'y').min(-20).max(20).step(.01)
+// lightGui.add(pointLight.position, 'z').min(-20).max(20).step(.01)
+// lightGui.add(pointLight, 'intensity').min(0).max(10).step(.01)
 
 ///////////////////////////////////////////
 
@@ -187,11 +187,11 @@ const directionalLight = new THREE.DirectionalLight( 0xffffff, 2 );
 directionalLight.position.set(20, -16, 3)
 scene.add( directionalLight )
 
-const directionalLightGui = gui.addFolder('directional light')
-directionalLightGui.add(directionalLight.position, 'x').min(-20).max(20).step(.01)
-directionalLightGui.add(directionalLight.position, 'y').min(-20).max(20).step(.01)
-directionalLightGui.add(directionalLight.position, 'z').min(-20).max(20).step(.01)
-directionalLightGui.add(directionalLight, 'intensity').min(0).max(20).step(.01)
+// const directionalLightGui = gui.addFolder('directional light')
+// directionalLightGui.add(directionalLight.position, 'x').min(-20).max(20).step(.01)
+// directionalLightGui.add(directionalLight.position, 'y').min(-20).max(20).step(.01)
+// directionalLightGui.add(directionalLight.position, 'z').min(-20).max(20).step(.01)
+// directionalLightGui.add(directionalLight, 'intensity').min(0).max(20).step(.01)
 
 ///////////////////////////////////////////
 
@@ -199,9 +199,9 @@ const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 5 );
 hemiLight.position.set( 0, 20, 0 );
 scene.add( hemiLight );
 
-const hemiGui = gui.addFolder('hemi')
+// const hemiGui = gui.addFolder('hemi')
 
-hemiGui.add(hemiLight, 'intensity').min(0).max(20).step(.01)
+// hemiGui.add(hemiLight, 'intensity').min(0).max(20).step(.01)
 
 ///////////////////////////////////////////
 
@@ -227,12 +227,12 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 
 camera.position.set(0, -0.55, 1.2)
 scene.add(camera)
 
-const cameraGui = gui.addFolder('camera')
-cameraGui.add(camera.position, 'x').min(-10).max(10).step(.0001)
-cameraGui.add(camera.position, 'y').min(-10).max(10).step(.0001)
-cameraGui.add(camera.position, 'z').min(-10).max(10).step(.0001)
-cameraGui.add(camera.rotation, 'x').step(.001)
-cameraGui.add(camera.rotation, 'y').step(.001)
+// const cameraGui = gui.addFolder('camera')
+// cameraGui.add(camera.position, 'x').min(-10).max(10).step(.0001)
+// cameraGui.add(camera.position, 'y').min(-10).max(10).step(.0001)
+// cameraGui.add(camera.position, 'z').min(-10).max(10).step(.0001)
+// cameraGui.add(camera.rotation, 'x').step(.001)
+// cameraGui.add(camera.rotation, 'y').step(.001)
 ///////////////////////////////////////////
 
 const renderer = new THREE.WebGLRenderer({
